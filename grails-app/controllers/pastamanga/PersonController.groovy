@@ -2,5 +2,7 @@ package pastamanga
 
 class PersonController {
 
-    def index() { }
+    def index() {
+    	render "Controlleur de personne"
+    }
 }
