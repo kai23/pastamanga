@@ -3,6 +3,6 @@ package pastamanga
 class HelloController {
 
     def index() {
-    	render 'hello World !';
+    	render 'hello BOOBS World because i am a KIWI :D !';
     }
 }
