@@ -72,5 +72,7 @@ grails.project.dependency.resolution = {
         //runtime ":yui-minify-resources:0.1.5"
 		test ":spock:0.7"
 		compile ':spring-security-core:2.0-RC2'
+		compile ":twitter-bootstrap:3.0.0"
+
     }
 }
