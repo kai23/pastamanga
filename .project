@@ -26,7 +26,11 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
+<<<<<<< HEAD
 			<location>/home/florian/pastamanga/target/work/plugins</location>
+=======
+			<location>C:/Users/clodagh/workspaceGrails/pastamanga/target/work/plugins</location>
+>>>>>>> afb7a31ef5f3f29ac1316f01c4b081628dbe69c6
 		</link>
 	</linkedResources>
 </projectDescription>

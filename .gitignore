@@ -15,3 +15,7 @@ stacktrace.log
 /web-app/WEB-INF/classes
 /.link_to_grails_plugins/
 /target-eclipse/
+<<<<<<< HEAD
+=======
+.project
+>>>>>>> afb7a31ef5f3f29ac1316f01c4b081628dbe69c6
