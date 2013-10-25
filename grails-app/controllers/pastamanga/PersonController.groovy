@@ -3,6 +3,6 @@ package pastamanga
 class PersonController {
 
     def index() {
-    	render "Controlleur de personne"
+    	render "Controlleur de personnesssss"
     }
 }
