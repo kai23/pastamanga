@@ -73,6 +73,7 @@ grails.project.dependency.resolution = {
 		runtime : runtime ":rest:0.7"
 		
 		compile ':spring-security-core:1.2.7.3'
+
 		compile ":twitter-bootstrap:3.0.0"
 
     }
