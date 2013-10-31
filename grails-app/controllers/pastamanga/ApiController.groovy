@@ -16,23 +16,10 @@ class ApiController {
 
 	def index() {
 		def http = new HTTPBuilder( 'http://myanimelist.net' )
-
 		http.auth.basic "Kai23","hcyzq3b9"
-		http.request( GET, XML ) { req ->
-			uri.path = '/api/anime/search.xml'
-			uri.query = [q: 'bleach' ]
-			response.success = { resp, xml ->
-				resultats = new XmlSlurper().parse(xml)
-				def animeList = new ArrayList<Anime>();
-				resultats.resultat.each{ node ->
-					anime = new Anime()
-					anime.identity = node.id
-					animeList.add(anime)
-				}
-				animeList.each { aniCu
-					println aniCu.id			
-				}
-			}
-		}
+		def resp = http.get(path:'/api/anime/search.xml', query:[q: 'bleach' ], contentType:TEXT, headers:[Accept : 'application/xml'])
+		xml = resp.getText()
+		
+		render xml 
 	}
 }
