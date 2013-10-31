@@ -9,7 +9,14 @@ class Anime {
 	String date
 	String description
 	
-	
+	public Anime(String name,String category,String date,String description){
+		super();
+		id ++;
+		this.name = name;
+		this.category = category;
+		this.date = date;
+		this.description = description;	
+	}
 	
 	
 	//Name
@@ -33,6 +40,9 @@ class Anime {
 		this.date = date;
 	}
 	String getDate(){
+		if(!date.isEmpty() && date != null){
+			return "Date is unknown!";
+		}
 		return date;
 	}
 	
@@ -46,9 +56,9 @@ class Anime {
 	
 	
     static constraints = {
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
+		name (blank:false, nullable:false)
+		category (blank:false, nullable:false)
+		date (blank:true, nullable:true)
+		description (blank:false, nullable:false)
     }
 }
