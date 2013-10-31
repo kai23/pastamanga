@@ -10,8 +10,6 @@ class Anime {
 	String description
 	
 	
-	
-	
 	//Name
 	void setName(String name){
 		this.name = name;
