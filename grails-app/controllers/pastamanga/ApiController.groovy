@@ -20,6 +20,17 @@ class ApiController {
 		def resp = http.get(path:'/api/anime/search.xml', query:[q: 'bleach' ], contentType:TEXT, headers:[Accept : 'application/xml'])
 		def xml = resp.getText()
 		
-		render xml 
+		def animeList = new ArrayList<Anime>()
+		def slurp = new XmlSlurper().parseText(xml)
+		def anime = slurp."entry"
+		anime.each {
+			def animeClass = new Anime()
+			animeClass.id = Long.parseLong(it."id".text())
+			animeList.add(animeClass)			
+		}
+		animeList.each {
+			println it.id
+		}
+		render anime.text() 
 	}
 }
