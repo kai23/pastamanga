@@ -9,6 +9,19 @@ import spock.lang.Specification
 @TestFor(Anime)
 class AnimeSpec extends Specification {
 
+	def "add Anime"() {
+	 expect:
+	  def Anime01 = new Anime(name: "test01", category: "scar", date:"12/06/2013" , description:"description") == true
+	 
+   }
+	def "add Anime to list"() {
+		expect:
+		 def Anime01 = new Anime(name: "test01", category: "scar", date:"12/06/2013" , description:"description") == true
+		ArrayList animeList = new ArrayList();
+		animeList.add(Anime01);
+		assert animeList.size() == 1;
+	  }
+	/*
 	def setup() {
 	}
 
@@ -16,5 +29,6 @@ class AnimeSpec extends Specification {
 	}
 
 	void "test something"() {
-	}
+		def testAnime01 = new Anime();
+	}*/
 }
