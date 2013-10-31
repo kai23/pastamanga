@@ -2,6 +2,11 @@ package pastamanga
 
 
 
+import java.awt.List;
+import java.sql.Date;
+
+import javax.validation.constraints.AssertTrue;
+
 import grails.test.mixin.*
 import spock.lang.*
 
@@ -14,6 +19,7 @@ class AnimeControllerSpec extends Specification {
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
     }
+	
 
     void "Test the index action returns the correct model"() {
 
