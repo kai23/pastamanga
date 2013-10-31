@@ -18,7 +18,7 @@ class ApiController {
 		def http = new HTTPBuilder( 'http://myanimelist.net' )
 		http.auth.basic "Kai23","hcyzq3b9"
 		def resp = http.get(path:'/api/anime/search.xml', query:[q: 'bleach' ], contentType:TEXT, headers:[Accept : 'application/xml'])
-		xml = resp.getText()
+		def xml = resp.getText()
 		
 		render xml 
 	}
