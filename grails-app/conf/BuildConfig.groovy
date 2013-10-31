@@ -49,8 +49,9 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
-		
-		
+		compile('org.codehaus.groovy.modules.http-builder:http-builder:0.6') {
+			excludes "commons-logging", "xml-apis", "groovy"
+		}
     }
 
     plugins {
@@ -71,8 +72,10 @@ grails.project.dependency.resolution = {
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
 		test ":spock:0.7"
-		compile ':spring-security-core:2.0-RC2'
+		//compile ":spring-security-core:2.0-RC2"
 		compile ":twitter-bootstrap:3.0.0"
+		compile ":rest:0.8"
+		
 
     }
 }
