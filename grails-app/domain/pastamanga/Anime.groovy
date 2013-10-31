@@ -9,46 +9,10 @@ class Anime {
 	String date
 	String description
 	
-	
-	
-	
-	//Name
-	void setName(String name){
-		this.name = name;
-	}
-	String getName(){
-		return name;
-	}
-	
-	//Category
-	void setCategory(String category){
-		this.category = category;
-	}
-	String getCategory(){
-		return category;
-	}
-	
-	//Date
-	void setDate(String date){
-		this.date = date;
-	}
-	String getDate(){
-		return date;
-	}
-	
-	//description
-	void setDescription(String description){
-		this.description = description;
-	}
-	String getDescription(){
-		return description;
-	}
-	
-	
     static constraints = {
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
-		name (blank:false, nullable:false, size:3..30, matches:"[a-zA-Z1-9_]+")
+		name (blank:false, nullable:false)
+		category (blank:false, nullable:false)
+		date (blank:true, nullable:true)
+		description (blank:false, nullable:false)
     }
 }
