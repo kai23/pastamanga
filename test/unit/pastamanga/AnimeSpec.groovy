@@ -19,7 +19,7 @@ class AnimeSpec extends Specification {
 		 def Anime01 = new Anime(name: "test01", category: "scar", date:"12/06/2013" , description:"description") == true
 		ArrayList animeList = new ArrayList();
 		animeList.add(Anime01);
-		assert animeList.size() == 1;
+		assert animeList.size() == 1;	
 	  }
 	/*
 	def setup() {
