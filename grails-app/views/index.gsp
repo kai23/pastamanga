@@ -3,6 +3,7 @@
 <head>
 <meta name="layout" content="main" />
 <r:require modules="bootstrap" />
+<r:require module="jquery-ui" />
 </head>
 <body>
 	<div class="container">
@@ -35,7 +36,8 @@
 				</ul>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
+						<input type="text" id="search_input" class="form-control"
+							placeholder="Search">
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>
@@ -46,6 +48,30 @@
 			<!-- /.navbar-collapse -->
 		</nav>
 	</div>
+	<script>
 
+$(function() {
+	$("#search_input").bind( "keydown", function( event ) {
+	    if ( event.keyCode === $.ui.keyCode.TAB && $( this ).data( "ui-autocomplete" ).menu.active ) {
+	      event.preventDefault();
+		}
+	});	
+	 $("#search_input").autocomplete({
+          source: $.ajax ({
+          	  type: "GET",
+          	  url: "http://myanimelist.net/api/anime/search.xml?q=bleach&callback=?",
+          	  dataType: 'jsonp',
+          	  async: false,
+          	  username: "kai23",
+          	  password: "hcyzq3b9",          	  
+          	  success: function( xml ) {
+				console.log("hey !");
+         	 }
+          	})
+      });
+});
+</script>
 </body>
 </html>
+
+

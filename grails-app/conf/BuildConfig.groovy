@@ -76,6 +76,7 @@ grails.project.dependency.resolution = {
 		compile ':spring-security-core:1.2.7.3'
 		compile ":twitter-bootstrap:3.0.0"
 		compile ":rest:0.8"
+		compile ":jquery-ui:1.10.3"
 		
 
     }
