@@ -40,7 +40,7 @@
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Se connecter</a></li>
+					<li><a href="secure">Se connecter</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
