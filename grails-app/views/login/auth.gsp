@@ -1,92 +1,53 @@
 <html>
 <head>
 	<meta name='layout' content='main'/>
-	<title><g:message code="springSecurity.login.title"/></title>
-	<style type='text/css' media='screen'>
-	#login {
-		margin: 15px 0px;
-		padding: 0px;
-		text-align: center;
-	}
-
-	#login .inner {
-		width: 340px;
-		padding-bottom: 6px;
-		margin: 60px auto;
-		text-align: left;
-		border: 1px solid #aab;
-		background-color: #f0f0fa;
-		-moz-box-shadow: 2px 2px 2px #eee;
-		-webkit-box-shadow: 2px 2px 2px #eee;
-		-khtml-box-shadow: 2px 2px 2px #eee;
-		box-shadow: 2px 2px 2px #eee;
-	}
-
-	#login .inner .fheader {
-		padding: 18px 26px 14px 26px;
-		background-color: #f7f7ff;
-		margin: 0px 0 14px 0;
-		color: #2e3741;
-		font-size: 18px;
-		font-weight: bold;
-	}
-
-	#login .inner .cssform p {
-		clear: left;
-		margin: 0;
-		padding: 4px 0 3px 0;
-		padding-left: 105px;
-		margin-bottom: 20px;
-		height: 1%;
-	}
-
-	#login .inner .cssform input[type='text'] {
-		width: 120px;
-	}
-
-	#login .inner .cssform label {
-		font-weight: bold;
-		float: left;
-		text-align: right;
-		margin-left: -105px;
-		width: 110px;
-		padding-top: 3px;
-		padding-right: 10px;
-	}
-
-	#login #remember_me_holder {
-		padding-left: 120px;
-	}
-
-	#login #submit {
-		margin-left: 15px;
-	}
-
-	#login #remember_me_holder label {
-		float: none;
-		margin-left: 0;
-		text-align: left;
-		width: 200px
-	}
-
-	#login .inner .login_message {
-		padding: 6px 25px 20px 25px;
-		color: #c33;
-	}
-
-	#login .inner .text_ {
-		width: 120px;
-	}
-
-	#login .inner .chk {
-		height: 12px;
-	}
-	</style>
+	<r:require modules="bootstrap" />	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
 <div id='login'>
-	<div class='inner'>
+	<div class="container">
+	<nav class="navbar navbar-default" role="navigation">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand" href="./">Pastamanga</a>
+	  </div>
+	
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="#">Link</a></li>
+	      <li><a href="#">Link</a></li>
+	      <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="user">List users</a></li>
+	          <li><a href="#">Another action</a></li>
+	          <li><a href="#">Something else here</a></li>
+	          <li class="divider"></li>
+	          <li><a href="#">Separated link</a></li>
+	          <li class="divider"></li>
+	          <li><a href="#">One more separated link</a></li>
+	        </ul>
+	      </li>
+	    </ul>
+	    <form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="secure">Se connecter</a></li>
+		</ul>
+	  </div><!-- /.navbar-collapse -->
 		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
 
 		<g:if test='${flash.message}'>
