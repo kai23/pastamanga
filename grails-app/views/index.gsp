@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 <meta name="layout" content="main" />
@@ -31,5 +31,3 @@ $(function() {
 </script>
 </body>
 </html>
-
-
