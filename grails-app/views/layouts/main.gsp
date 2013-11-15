@@ -41,11 +41,13 @@
 					<sec:ifNotLoggedIn>
 						<li class="active"><g:link controller='user' action="create">Créer Compte</g:link></li>
 					</sec:ifNotLoggedIn>
+					<form class="navbar-form navbar-left" role="search" id="search_anime">
+				      <div class="form-group">
+				        <input type="text" class="form-control" id="search_input" placeholder="Search">
+				      </div>
+				    </form>
 				</ul>
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group"></div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+
 				<ul class="nav navbar-nav navbar-right">
 					<li><sec:ifLoggedIn>
 							<span class="navbar-text navbar-right navbar-link">Bonjour
