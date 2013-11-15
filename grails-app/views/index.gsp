@@ -2,12 +2,11 @@
 <html>
 <head>
 <meta name="layout" content="main" />
-<r:require modules="bootstrap" />
 <r:require module="jquery-ui" />
 </head>
 <body>
 	
-	<script>
+<script>
 
 $(function() {
 	$("#search_input").bind( "keydown", function( event ) {
