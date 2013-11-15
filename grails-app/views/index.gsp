@@ -18,11 +18,9 @@ $(function() {
 	 $("#search_input").autocomplete({
           source: $.ajax ({
           	  type: "GET",
-          	  url: "http://myanimelist.net/api/anime/search.xml?q=bleach&callback=?",
+          	  url: "anime-titles.xml",
           	  dataType: 'jsonp',
-          	  async: false,
-          	  username: "kai23",
-          	  password: "hcyzq3b9",          	  
+          	  async: false,         	  
           	  success: function( xml ) {
 				console.log("hey !");
          	 }
