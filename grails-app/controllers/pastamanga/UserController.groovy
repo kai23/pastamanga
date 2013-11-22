@@ -9,6 +9,7 @@ import grails.transaction.Transactional
 class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+	def roleUser = Role.findByAuthority("ROLE_USER")
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -34,8 +35,8 @@ class UserController {
             respond userInstance.errors, view:'create'
             return
         }
-
-        userInstance.save flush:true
+		
+        userInstance.save flush:true	
 
         request.withFormat {
             form {
@@ -43,7 +44,9 @@ class UserController {
                 redirect userInstance
             }
             '*' { respond userInstance, [status: CREATED] }
-        }
+        }		
+		UserRole.create(userInstance, roleUser, true)
+		
     }
 
     def edit(User userInstance) {

@@ -6,8 +6,6 @@
 	value="${message(code: 'user.label', default: 'User')}" />
 </head>
 <body>
-	<a href="#create-user" class="skip" tabindex="-1"><g:message
-			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
 
 	<div id="create-user" class="content scaffold-create" role="main">
 		<h1>
