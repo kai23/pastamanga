@@ -1,7 +1,5 @@
 package pastamanga
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -15,8 +13,13 @@ class AnimeController {
         respond Anime.list(params), model:[animeInstanceCount: Anime.count()]
     }
 
-    def show(Anime animeInstance) {
-        respond animeInstance
+    def show() {
+		def anime = Anime.get(params.id)        
+        if (!anime) {
+            response.sendError 404
+            return
+        }
+        [animeBean: anime]
     }
 
     def create() {

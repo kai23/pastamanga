@@ -3,6 +3,7 @@
 <html lang="fr">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<r:require module="jquery-ui" />
 	<r:require modules="bootstrap" />
 	<g:layoutTitle />
 	<r:layoutResources />
@@ -70,5 +71,60 @@
 		<g:layoutBody />
 	</div>
 	<r:layoutResources />
+	 <script>
+$(function() {
+	var myArr = [];
+	var myArr2 = [];
+	$.ajax({
+		type: "GET",
+		url: "/pastamanga/anime2.json",
+		dataType: 'json',
+		async: false,
+		success: parseJson,
+		complete: setupAC
+	});
+
+	function parseJson(json) {
+		//find every query value
+		$(json.animetitles).each(function(index, el) {
+			$(el.anime).each(function(index2, el2) {
+				var id = el2.aid;
+				$(el2.title).each(function(i3, el3) {
+					if (el3.lang == "fr") {
+						myArr.push(el3.text);	
+						myArr2.push({id:id, name:el3.text})					
+					}
+				});
+			});
+		});
+
+	}
+
+	function setupAC() {
+		$("input#search_input").autocomplete({
+			source: function(request, response) {
+				var term = $.ui.autocomplete.escapeRegex(request.term);
+				var matcher = new RegExp("" + term, "i");
+
+				var result = $.grep(myArr, function(item) {
+					return matcher.test(item);
+				});
+				console.log(result);
+				response(result);
+			},
+			minLength: 1,
+			select: function(event, ui) {
+				$("#search_input").val(ui.item.value);
+				$.each(myArr2, function(index, val) {
+					if (val.name == ui.item.value) {
+						window.location = '/pastamanga/anime/show/'+val.id;
+					}
+				});
+
+			}
+		});
+	}
+});
+      </script>
 </body>
 </html>

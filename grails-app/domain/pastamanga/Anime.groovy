@@ -2,6 +2,7 @@ package pastamanga
 
 
 class Anime {
+	int id
 	String name
 	String category
 	String date
