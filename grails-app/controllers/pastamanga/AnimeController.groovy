@@ -1,12 +1,35 @@
 package pastamanga
 
 import static org.springframework.http.HttpStatus.*
+import grails.plugins.springsecurity.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class AnimeController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+	
+	@Transactional
+	def addAnimeToUser(Anime animeInstance){
+		if (animeInstance == null) {
+			notFound()
+			return
+		}
+		if(isLoggedIn()){
+			User user = getAuthenticatedUser()
+			if(user==null){
+				notFound()
+				return
+			}
+			def exists = UserAnime.get(user.id, animeInstance.id)
+			if(exists){
+				render "Anime is already in your list"
+			}
+			UserAnime.create(user, animeInstance, true)
+			render "Anime added"
+		}
+		
+	}
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

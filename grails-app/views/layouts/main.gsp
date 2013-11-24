@@ -61,11 +61,11 @@
 				</ul>
                 <ul class="nav pull-right">
                 	<sec:ifLoggedIn>
-	                    <li><a class="btn-header" href="/pastamanga/login">Mon compte</a></li>
+	                    <li><g:link controller='user' action="show" id="${userInstance}">Mon compte</g:link></li>
 	                    <li><g:link controller='logout'>Déconnexion</g:link></li>
                 	</sec:ifLoggedIn>
                 	<sec:ifNotLoggedIn>
-	                    <li><a class="btn-header" href="/pastamanga/login">Sign up</a></li>
+	                    <li><g:link controller='user' action="create">Créer Compte</g:link></li>
 	                    <li><a class="btn-header" href="/pastamanga/login">Sign in</a></li>
                 	</sec:ifNotLoggedIn>
                 </ul>

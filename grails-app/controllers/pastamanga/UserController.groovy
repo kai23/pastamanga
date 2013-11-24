@@ -4,12 +4,12 @@ package pastamanga
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugins.springsecurity.*
 
 @Transactional(readOnly = true)
 class UserController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-	// def roleUser = Role.findByAuthority("ROLE_USER")
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]	
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -45,6 +45,7 @@ class UserController {
             }
             '*' { respond userInstance, [status: CREATED] }
         }		
+		Role roleUser = Role.findByAuthority("ROLE_USER")
 		UserRole.create(userInstance, roleUser, true)
 		
     }
