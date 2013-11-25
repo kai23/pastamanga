@@ -9,6 +9,21 @@ import spock.lang.Specification
 @TestFor(User)
 class UserSpec extends Specification {
 
+	def "add User"() {
+		expect:
+			def User01 = new User(username: "UserTest01", password: "test", enabled: true, accountNonExpired: false, credentialsNonExpired:false, accountNonLocked: false, authorities:false) == true
+		
+	}
+	
+	def "add User to list"() {
+		expect:
+			def User01 = new User(username: "UserTest01", password: "test", enabled: true, accountNonExpired: false, credentialsNonExpired:false, accountNonLocked: false, authorities:false) == true
+			ArrayList userList = new ArrayList();
+			userList.add(User01);
+			assert userList.size() == 1;
+	}
+	
+	/*   
     def setup() {
     }
 
@@ -16,5 +31,5 @@ class UserSpec extends Specification {
     }
 
     void "test something"() {
-    }
+    }*/
 }
