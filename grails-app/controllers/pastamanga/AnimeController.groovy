@@ -37,10 +37,6 @@ class AnimeController {
     }
 
     def show() {
-		if(params.values == null){
-			response.sendError 404
-			return
-		}
 		def anime = Anime.get(params.id)        
         if (!anime) {
             response.sendError 404
