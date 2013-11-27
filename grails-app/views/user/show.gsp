@@ -79,51 +79,13 @@
 			</ol>
 			<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
+					<g:link class="showAnime" action="showAnime" resource="${userInstance}"><g:message code="default.button.show.label" default="show Anime list" /></g:link>
 					<g:link class="edit" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>
 		
-		<div id="list-anime" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="name" title="${message(code: 'anime.name.label', default: 'Name')}" />
-					
-						<g:sortableColumn property="category" title="${message(code: 'anime.category.label', default: 'Category')}" />
-					
-						<g:sortableColumn property="date" title="${message(code: 'anime.date.label', default: 'Date')}" />
-					
-						<g:sortableColumn property="description" title="${message(code: 'anime.description.label', default: 'Desciption')}" />
-					
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${AnimeList}" status="i" var="animeInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${animeInstance.id}">${fieldValue(bean: animeInstance, field: "name")}</g:link></td>
-					
-						<td>${fieldValue(bean: animeInstance, field: "category")}</td>
-					
-						<td><g:formatBoolean boolean="${animeInstance.date}" /></td>
-					
-						<td><g:formatBoolean boolean="${animeInstance.description}" /></td>					
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${animeInstanceCount ?: 0}" />
-			</div>
-		</div>
+		
 	</body>
 </html>
