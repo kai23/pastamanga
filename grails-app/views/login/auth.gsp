@@ -37,6 +37,7 @@
 
                 <div class="span12 footer">
                     <form action='${postUrl}' method='POST' role="form" autocomplete='off' class="col-xs-4">
+                    <div class='fheader'><g:message code="springSecurity.login.header"/></div>
                     	<p class="help-block">
 							<g:if test='${flash.message}'>
 								<div class='login_message'>${flash.message}</div>

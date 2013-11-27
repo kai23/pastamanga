@@ -13,7 +13,7 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
+			<table class="table table-striped">
 			<thead>
 					<tr>
 					
@@ -33,11 +33,13 @@
 				
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${animeInstance.id}">${fieldValue(bean: animeInstance, field: "name")}</g:link></td>
+						<td><g:link controller="anime" action="show" id="${animeInstance.id}">${fieldValue(bean: animeInstance, field: "name")}</g:link></td>
 					
 						<td>${fieldValue(bean: animeInstance, field: "category")}</td>
 									
-					
+						<td>${fieldValue(bean: animeInstance, field: "date")}</td>
+						
+						<td>${fieldValue(bean: animeInstance, field: "description")}</td>
 					</tr>
 				</g:each>
 				</tbody>

@@ -8,7 +8,6 @@ import grails.plugins.springsecurity.*
 import grails.plugins.springsecurity.Secured
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]	

@@ -21,12 +21,12 @@ class AnimeController {
 				notFound()
 				return
 			}
-			def exists = UserAnime.get(user.id, animeInstance.id)
+			def exists = UserAnime.get(user.id, animeInstance.id)			
 			if(exists){
-				render "Anime is already in your list"
+				return
 			}
 			UserAnime.create(user, animeInstance, true)
-			render "Anime added"
+			redirect (controller:'user', action:"showAnime", message:'anime added')
 		}
 		
 	}

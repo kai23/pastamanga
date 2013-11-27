@@ -1,7 +1,8 @@
+<%@ page import="pastamanga.User" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Business Template</title>
+	<title>Pastamanga</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
@@ -37,6 +38,7 @@
 	    <!--[if lt IE 9]>
 	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	    <![endif]-->
+
 </head>
 <body class="pull_top">
 	<g:if test="${params.action != null }">
@@ -60,14 +62,18 @@
             		<li><input type="search" id="search_input" name="search_input"></li>
 				</ul>
                 <ul class="nav pull-right">
+                <li>
                 	<sec:ifLoggedIn>
+                		<li><span class="navbar-text navbar-right navbar-link">Bonjour
+								<sec:username />!
+							</span></li>
 	                    <li><g:link controller='user' action="show" id="${userInstance}">Mon compte</g:link></li>
 	                    <li><g:link controller='logout'>Déconnexion</g:link></li>
                 	</sec:ifLoggedIn>
                 	<sec:ifNotLoggedIn>
-	                    <li><g:link controller='user' action="create">Créer Compte</g:link></li>
-	                    <li><a class="btn-header" href="/pastamanga/login">Sign in</a></li>
-                	</sec:ifNotLoggedIn>
+                		<li><g:link controller='user' action="create">Créer Compte</g:link></li>
+						<li><g:link controller='secure'>Se Connecter</g:link></li>
+					</sec:ifNotLoggedIn></li>
                 </ul>
             </div>
         </div>

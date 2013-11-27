@@ -1,4 +1,4 @@
-
+<%@ page import="pastamanga.User" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -39,7 +39,9 @@
                 </g:if>
                 <sec:ifLoggedIn>
                     <fieldset class="buttons">
-	                    <g:link class="Anime" action="addAnimeToUser" resource="${animeBean}"><g:message code="default.button.addAnimeToUser.label" default="Add to my list" /></g:link>
+	                    <li class="fieldcontain">
+	                    <span id="category-label" class="property-label"><g:link class="btn btn-default" action="addAnimeToUser" resource="${animeBean}"><g:message code="default.button.addAnimeToUser.label" default="Add to my list" /></g:link></span>
+	                    </li>
 	                </fieldset>
                 </sec:ifLoggedIn>
                           

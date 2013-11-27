@@ -6,7 +6,7 @@ class SecureController {
 
    @Secured(['ROLE_ADMIN', 'ROLE_USER'])
    def index = {
-	  render view:'/index'
+	  render view:'index'
    }
    
 }
