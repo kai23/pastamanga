@@ -64,19 +64,20 @@ class AnimeControllerSpec extends Specification {
     }
 
     void "Test that the show action returns the correct model"() {
+		setup:
+			params.id = 1
         when:"The show action is executed with a null domain"
-            controller.show(null)
+            controller.show()
 
         then:"A 404 error is returned"
             response.status == 404
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def anime = new Anime(params)
-            controller.show(anime)
+            controller.show(params.id)
 
         then:"A model is populated containing the domain instance"
-            model.animeInstance == anime
+            model.anime == anime
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -121,7 +122,7 @@ class AnimeControllerSpec extends Specification {
             controller.update(anime)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/anime/show/$anime.id"
+            response.redirectedUrl == "/anime/show/"+anime.id
             flash.message != null
     }
 

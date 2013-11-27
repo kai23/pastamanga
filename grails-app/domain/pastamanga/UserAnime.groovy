@@ -29,6 +29,12 @@ class UserAnime implements Serializable {
 		find 'from UserAnime where user.id=:userId and anime.id=:animeId',
 			[userId: userId, animeId: animeId]
 	}
+	
+	static ArrayList<UserAnime> get(Long userId) {
+		
+		UserAnime.findAll("from UserAnime where user.id=:userId",
+			[userId: userId])
+	}
 
 	static UserAnime create(User user, Anime anime, boolean flush = false) {
 		new UserAnime(user: user, anime: anime).save(flush: flush, insert: true)
