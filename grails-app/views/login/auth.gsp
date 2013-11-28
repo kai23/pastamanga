@@ -13,9 +13,6 @@
             <div class="row">
                 <div class="span12 header">
                     <h4>Vous connecter à votre compte</h4>
-                    <p>
-                        There are many variations of passages of Lorem alteration in some form  injected humour these randomised words .</p>
-
                     <div class="span4 social">
                         <a href="#" class="circle facebook">
                             <img src="/pastamanga/img/face.png" alt="">
@@ -52,14 +49,14 @@
                 <div class="span12 proof">
                     <div class="span5 remember">
                         <label class="checkbox">
-                            <input type='checkbox' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/> Remember me
+                            <input type='checkbox' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/> Se souvenir de moi
                         </label>
-                        <a href="reset.html">Forgot password?</a>
+                        <a href="reset.html">Vous avez oublié votre mot de passe?</a>
                     </div>
 
                     <div class="span3 dosnt">
-                        <span>Don’t have an account?</span>
-                        <a href="sign-up.html">Sign up</a>
+                        <span>Vous n'avez pas de compte?</span>
+                        <a href="sign-up.html">Inscrivez-vous</a>
                     </div>
                 </div>
             </div>
