@@ -9,7 +9,7 @@ class Episode {
 	static constraints = {
 		name (blank:false, nullable:false)
 		nameAnime (blank:true, nullable:true)
-		date (blank:true, nullable:true)
+		date_added (blank:true, nullable:true)
 		description (blank:true, nullable:true)
 	}
 }
