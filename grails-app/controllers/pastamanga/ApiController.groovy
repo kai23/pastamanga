@@ -1,16 +1,13 @@
 package pastamanga
 
-
-import groovyx.net.http.HTTPBuilder
-//import groovyx.net.http.ContentType // this doesn't import ContentType
-//import groovyx.net.http.Method // this doesn't import Method
-import groovyx.net.http.RESTClient
-import groovyx.net.http.HttpResponseDecorator
-
 // ContentType static import
 import static groovyx.net.http.ContentType.*
 // Method static import
 import static groovyx.net.http.Method.*
+
+import groovyx.net.http.HTTPBuilder
+
+
 
 class ApiController {
 

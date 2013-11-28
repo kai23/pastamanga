@@ -19,8 +19,7 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list user">
-			
+			<ol class="property-list user">			
 				<g:if test="${userInstance?.username}">
 				<li class="fieldcontain">
 					<span id="username-label" class="property-label"><g:message code="user.username.label" default="Username" /></span>
@@ -84,20 +83,6 @@
 				</g:form>
 				</li>
 			</ol>
-		
-			
-			
-			
-					
-			
-	
-					
-				
-			
-					
-					
 		</div>
-		
-		
 	</body>
 </html>

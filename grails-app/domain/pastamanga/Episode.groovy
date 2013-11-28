@@ -3,7 +3,7 @@ package pastamanga
 class Episode {
 	String name
 	String nameAnime
-	String date
+	String date_added
 	String description
 	
 	static constraints = {

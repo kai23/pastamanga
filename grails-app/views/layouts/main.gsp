@@ -72,7 +72,7 @@
                 	</sec:ifLoggedIn>
                 	<sec:ifNotLoggedIn>
                 		<li><g:link controller='user' action="create">Créer Compte</g:link></li>
-						<li><g:link controller='secure'>Se Connecter</g:link></li>
+						<li><a class="btn-header" href="/pastamanga/login">Se Connecter</a></li>
 					</sec:ifNotLoggedIn></li>
                 </ul>
             </div>

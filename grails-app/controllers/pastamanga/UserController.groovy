@@ -12,31 +12,14 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]	
 
-	def showAnime(Integer max)	{
-		params.max = Math.min(max ?: 10, 100)
-		User user = getAuthenticatedUser()
-		if(user==null){
-			notFound()
-			return
-		}
-		def userAnime = UserAnime.get(user.id)
-		ArrayList animeList = new ArrayList()
-		(userAnime).each {
-			i->
-			animeList.add(Anime.get(i.anime.id))
-		}
-		
-		respond animeList
-	}
-	
 	@Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userInstanceCount: User.count()]
     }
 
-    def show(User userInstance) {		
-        respond userInstance
+    def show(User userInstance) {
+		respond userInstance
     }
 
     def create() {
@@ -114,6 +97,23 @@ class UserController {
             '*'{ render status: NO_CONTENT }
         }
     }
+	
+	def showAnime(Integer max)	{
+		params.max = Math.min(max ?: 10, 100)
+		User user = getAuthenticatedUser()
+		if(user==null){
+			notFound()
+			return
+		}
+		def userAnime = UserAnime.get(user.id)
+		ArrayList animeList = new ArrayList()
+		(userAnime).each {
+			i->
+			animeList.add(Anime.get(i.anime.id))
+		}
+		
+		respond animeList
+	}
 
     protected void notFound() {
         request.withFormat {
