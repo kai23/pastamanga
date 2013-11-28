@@ -25,10 +25,10 @@
                     <span class="property-value" aria-labelledby="category-label"><g:fieldValue bean="${animeBean}" field="category"/></span>                   
                 </li>
                 </g:if>
-                <g:if test="${animeBean?.date}">
+                <g:if test="${animeBean?.date_added}">
                 <li class="fieldcontain">
-                    <span id="date-label" class="property-label"><g:message code="anime.date.label" default="Date : " /></span>
-                    <span class="property-value" aria-labelledby="date-label"><g:fieldValue bean="${animeBean}" field="date"/></span>                   
+                    <span id="date_added-label" class="property-label"><g:message code="anime.date_added.label" default="Date : " /></span>
+                    <span class="property-value" aria-labelledby="date_added-label"><g:fieldValue bean="${animeBean}" field="date_added"/></span>                   
                 </li>
                 </g:if>
                 <g:if test="${animeBean?.description}">

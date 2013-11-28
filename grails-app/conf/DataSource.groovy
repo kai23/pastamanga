@@ -18,7 +18,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:testing;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            url = "jdbc:h2:pastamanga;MVCC=TRUE;LOCK_TIMEOUT=10000"
             logSql = true
         }
     }
