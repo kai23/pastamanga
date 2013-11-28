@@ -72,7 +72,7 @@
                 	</sec:ifLoggedIn>
                 	<sec:ifNotLoggedIn>
                 		<li><g:link controller='user' action="create">Créer Compte</g:link></li>
-						<li><g:link controller='secure'>Se Connecter</g:link></li>
+						<li><a class="btn-header" href="/pastamanga/login">Se Connecter</a></li>
 					</sec:ifNotLoggedIn></li>
                 </ul>
             </div>
@@ -87,47 +87,37 @@
             <div class="row sections">
                 <div class="span4 recent_posts">
                     <h3 class="footer_header">
-                        Recent Posts
+                        Nouveautés
                     </h3>
                     <div class="post">
                         <a href="/pastamanga/blogpost.html">
-                            <img src="/pastamanga/img/recent_post1.png" class="img-circle" />
+                            <img src="/pastamanga/img/Bleach.jpg" class="img-circle" height="70" width="70"/>
                         </a>
                         <div class="date">
-                            Wed, 12 Dec
+                            Jeudi, 28 Nov
                         </div>
-                        <a href="/pastamanga/blogpost.html" class="title">
-                            Randomised words which don't look embarrasing hidden.
-                        </a>
+                            Bleach - Nouveau manga rajouté.
                     </div>
                     <div class="post">
                         <a href="/pastamanga/blogpost.html">
-                            <img src="/pastamanga/img/recent_post2.png" class="img-circle" />
+                            <img src="/pastamanga/img/bob.jpg" class="img-circle" height="70" width="70" />
                         </a>
                         <div class="date">
-                            Mon, 12 Dec
+                            Lundi, 25 Nov
                         </div>
-                        <a href="/pastamanga/blogpost.html" class="title">
-                            Randomised words which don't look embarrasing hidden.
-                        </a>
+                            Azerty - Nouvelle utilisateur inscrit.
                     </div>
                 </div>
                 <div class="span4 testimonials">
                     <h3 class="footer_header">
-                        Testimonials
+                        
                     </h3>
                     <div class="wrapper">
                         <div class="quote">
-                            <span>“</span>
-                            There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
-                            <span></span>
+                            
                         </div>
                         <div class="author">
-                            <img src="/pastamanga/img/user-display.png" />
-                            <div class="name">Alejandra Galvan Castillo</div>
-                            <div class="info">
-                                Details Canvas
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -179,7 +169,7 @@
                     </div>
                     <div class="row copyright">
                         <div class="span12">
-                            © 2013 Clean Canvas. All rights reserved. Theme by Detail Canvas.
+                            © 2013 PastaManga. All rights reserved. Theme by <a href="http://www.barilla.fr/">Barilla</a>.
                         </div>
                     </div>
                 </div>            
