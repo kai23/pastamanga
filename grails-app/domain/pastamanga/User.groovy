@@ -25,8 +25,6 @@ class User {
 	}
 
 	def beforeInsert() {
-		//def role = Role.findByAuthority("ROLE_USER")
-		//UserRole.create this, role , true
 		encodePassword()
 	}
 

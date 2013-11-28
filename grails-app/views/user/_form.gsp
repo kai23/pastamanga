@@ -1,7 +1,6 @@
 <%@ page import="pastamanga.User"%>
 
-<div
-	class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required form-group">
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required form-group">
 	<label for="username" class="col-sm-2 control-label"> <g:message
 			code="user.username.label" default="Username" /> <span
 		class="required-indicator">*</span>

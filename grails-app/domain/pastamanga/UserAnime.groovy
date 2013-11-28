@@ -30,6 +30,10 @@ class UserAnime implements Serializable {
 			[userId: userId, animeId: animeId]
 	}
 	
+	@Override
+	public String toString() {
+		return "UserAnime [user=" + user + ", anime=" + anime + "]";
+	}
 	static ArrayList<UserAnime> get(Long userId) {
 		
 		UserAnime.findAll("from UserAnime where user.id=:userId",
