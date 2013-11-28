@@ -98,3 +98,9 @@ codenarc.reports = {
 		title = 'Sample Report'
 	}
 }
+
+codenarc.properties = {
+	// Each property definition is of the form:  RULE.PROPERTY-NAME = PROPERTY-VALUE
+	GrailsPublicControllerMethod.enabled = false
+	EmptyIfStatement.priority = 1
+}
