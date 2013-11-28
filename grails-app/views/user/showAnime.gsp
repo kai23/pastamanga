@@ -21,7 +21,7 @@
 					
 						<g:sortableColumn property="category" title="${message(code: 'anime.category.label', default: 'Category')}" />
 					
-						<g:sortableColumn property="date" title="${message(code: 'anime.date.label', default: 'Date')}" />
+						<g:sortableColumn property="date_added" title="${message(code: 'anime.date_added.label', default: 'Date')}" />
 					
 						<g:sortableColumn property="description" title="${message(code: 'anime.description.label', default: 'Desciption')}" />
 					
@@ -37,7 +37,7 @@
 					
 						<td>${fieldValue(bean: animeInstance, field: "category")}</td>
 									
-						<td>${fieldValue(bean: animeInstance, field: "date")}</td>
+						<td>${fieldValue(bean: animeInstance, field: "date_added")}</td>
 						
 						<td>${fieldValue(bean: animeInstance, field: "description")}</td>
 					</tr>

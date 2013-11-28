@@ -10,6 +10,7 @@ import spock.lang.Specification
 class ApiControllerSpec extends Specification {
 
 	def setup() {
+		//do something
 	}
 
 	def cleanup() {

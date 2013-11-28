@@ -8,28 +8,6 @@ import grails.transaction.Transactional
 class AnimeController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-	
-	@Transactional
-	def addAnimeToUser(Anime animeInstance){
-		if (animeInstance == null) {
-			notFound()
-			return
-		}
-		if(isLoggedIn()){
-			User user = getAuthenticatedUser()
-			if(user==null){
-				notFound()
-				return
-			}
-			def exists = UserAnime.get(user.id, animeInstance.id)			
-			if(exists){
-				return
-			}
-			UserAnime.create(user, animeInstance, true)
-			redirect (controller:'user', action:"showAnime", message:'anime added')
-		}
-		
-	}
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -122,6 +100,28 @@ class AnimeController {
         }
     }
 
+	@Transactional
+	def addAnimeToUser(Anime animeInstance){
+		if (animeInstance == null) {
+			notFound()
+			return
+		}
+		if(isLoggedIn()){
+			User user = getAuthenticatedUser()
+			if(user==null){
+				notFound()
+				return
+			}
+			def exists = UserAnime.get(user.id, animeInstance.id)
+			if(exists){
+				redirect(controller:'user', action:'show')
+			}
+			UserAnime.create(user, animeInstance, true)
+			redirect (controller:'user', action:"showAnime", message:'anime added')
+		}
+		
+	}
+	
     protected void notFound() {
         request.withFormat {
             form {

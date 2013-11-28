@@ -12,7 +12,7 @@ class RoleControllerSpec extends Specification {
     def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+        params["authorirty"] = 'ROLE_TEST'
     }
 
     void "Test the index action returns the correct model"() {

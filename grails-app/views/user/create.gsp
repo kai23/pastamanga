@@ -41,7 +41,7 @@
 									<input type="text" name="username" class="form-control" required="" value="" placeholder="Username"id="username">
 									<input type="text" name="password" class="form-control" required="" value="" placeholder="Password" id="password">
 									<input type="submit" name="create" class="btn btn-default" value="Create" id="create">
-							</form>
+							</form>					
 						</div>
 					</div>
 					<div class="span12 dosnt">

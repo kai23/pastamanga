@@ -11,13 +11,13 @@ class EpisodeSpec extends Specification {
 
 	def "add Episode"() {
 		expect:
-			def Episode01 = new Episode(name: "EpisodeTest01",nameAnime: "",date: "", description: ""  ) == true
+			def Episode01 = new Episode(name: "EpisodeTest01",nameAnime: "",date_added: "", description: ""  ) == true
 		
 	}
 	
 	def "add Episode to list"() {
 		expect:
-			def Episode01 = new Episode(name: "EpisodeTest01",nameAnime: "",date: "", description: ""  ) == true
+			def Episode01 = new Episode(name: "EpisodeTest01",nameAnime: "",date_added: "", description: ""  ) == true
 			ArrayList episodeList = new ArrayList();
 			episodeList.add(Episode01);
 			assert episodeList.size() == 1;
