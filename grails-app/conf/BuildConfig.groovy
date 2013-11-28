@@ -62,6 +62,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.0.1"
         compile ':cache:1.1.1'
 		compile ':codenarc:0.19'
+		test ":code-coverage:1.2.7"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.2" // or ":hibernate4:4.1.11.2"
@@ -80,4 +81,27 @@ grails.project.dependency.resolution = {
 		
 
     }
+}
+
+codenarc.reports = {
+	// Each report definition is of the form:
+	//    REPORT-NAME(REPORT-TYPE) {
+	//        PROPERTY-NAME = PROPERTY-VALUE
+	//        PROPERTY-NAME = PROPERTY-VALUE
+	//    }
+
+	MyXmlReport('xml') {                    // The report name "MyXmlReport" is user-defined; Report type is 'xml'
+		outputFile = 'CodeNarc-Report.xml'  // Set the 'outputFile' property of the (XML) Report
+		title = 'Sample Report'             // Set the 'title' property of the (XML) Report
+	}
+	MyHtmlReport('html') {                  // Report type is 'html'
+		outputFile = 'CodeNarc-Report.html'
+		title = 'Sample Report'
+	}
+}
+
+codenarc.properties = {
+	// Each property definition is of the form:  RULE.PROPERTY-NAME = PROPERTY-VALUE
+	GrailsPublicControllerMethod.enabled = false
+	EmptyIfStatement.priority = 1
 }
