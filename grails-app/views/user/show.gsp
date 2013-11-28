@@ -71,11 +71,11 @@
 					
 						<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${userInstance?.passwordExpired}" /></span>
 					
-				</li>
+				</li class="fieldcontain">
 				</g:if>
 				<li>
 				<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
+				<fieldset class="buttons fieldcontain">
 					<g:actionSubmit class="btn btn-default" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 					<g:link class="btn btn-default" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:link class="btn btn-default" action="showAnime" resource="${userInstance}"><g:message code="default.button.show.label" default="show Anime list" /></g:link>				
