@@ -14,7 +14,7 @@ class AnimeController {
         respond Anime.list(params), model:[animeInstanceCount: Anime.count()]
     }
 
-    def show(int id) {
+    def show(Integer id) {
 		if(params == null || id == null){
 			response.sendError 404
 			return

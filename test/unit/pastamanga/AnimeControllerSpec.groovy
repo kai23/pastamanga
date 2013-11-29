@@ -2,10 +2,6 @@ package pastamanga
 
 
 
-import java.awt.List;
-
-import javax.validation.constraints.AssertTrue;
-
 import grails.test.mixin.*
 import spock.lang.*
 
@@ -16,9 +12,11 @@ class AnimeControllerSpec extends Specification {
     def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+        params.category = "test"   
+        params.date_added = "test" 
+        params.description = "test"   
+        params.name = "test"  
     }
-	
 
     void "Test the index action returns the correct model"() {
 
@@ -63,20 +61,19 @@ class AnimeControllerSpec extends Specification {
     }
 
     void "Test that the show action returns the correct model"() {
-		setup:
-			params.id = 1
         when:"The show action is executed with a null domain"
-            controller.show()
+            controller.show(null)
 
         then:"A 404 error is returned"
             response.status == 404
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            controller.show(params.id)
+            def anime = new Anime(params)
+            controller.show(anime)
 
         then:"A model is populated containing the domain instance"
-            model.anime == anime
+            model.animeInstance == anime
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -121,7 +118,7 @@ class AnimeControllerSpec extends Specification {
             controller.update(anime)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/anime/show/"+anime.id
+            response.redirectedUrl == "/anime/show/$anime.id"
             flash.message != null
     }
 
